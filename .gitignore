@@ -5,3 +5,7 @@ Temp
 *.sln
 *.userprefs
 *.csproj
+.DS_Store
+reversi.app
+reversi.exe
+reversi_Data
