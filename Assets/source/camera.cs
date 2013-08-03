@@ -11,9 +11,9 @@ public class camera : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {}
 /**
-* ????
+* サンプル
 *
-* ??????????????
+* どこかのサイトで拾ったコード
 */
 	private void _sample1() {
 		Camera cam = gameObject.GetComponent<Camera>();
@@ -31,7 +31,7 @@ public class camera : MonoBehaviour {
 		Destroy(this);
 	}
 /**
-* ????
+* サンプル
 */
 	private void _sample2() {
 		Camera cam = gameObject.GetComponent<Camera>();
