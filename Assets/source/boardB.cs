@@ -83,9 +83,9 @@ public class boardB : MonoBehaviour {
 */
 	private void gui_update() {
 		if(rev.turnIs() == Reversi.typeOfPiece.Black) {
-			((GUIText)GameObject.Find("GUITurn").GetComponent("GUIText")).text = "Now Black turn Black";
+			((GUIText)GameObject.Find("GUITurn").GetComponent("GUIText")).text = "Now turn Black";
 		} else {
-			((GUIText)GameObject.Find("GUITurn").GetComponent("GUIText")).text = "Now Black turn White";
+			((GUIText)GameObject.Find("GUITurn").GetComponent("GUIText")).text = "Now turn White";
 		}
 		((GUIText)GameObject.Find("GUIBlackNum").GetComponent("GUIText")).text = "Black : " + rev.numOfBlack();
 		((GUIText)GameObject.Find("GUIWhiteNum").GetComponent("GUIText")).text = "White : " + rev.numOfWhite();
