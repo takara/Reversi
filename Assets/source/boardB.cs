@@ -17,6 +17,7 @@ public class boardB : MonoBehaviour {
 		rev = new Reversi();
 		rev.setCallback(putMark);
 		marks = new GameObject[8,8];
+		name = "board";
 	}
 /**
 * 初期化（開始時）

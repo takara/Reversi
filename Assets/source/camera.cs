@@ -2,14 +2,45 @@ using UnityEngine;
 using System.Collections;
 
 public class camera : MonoBehaviour {
+	float angle = 360f / 4 / Mathf.Rad2Deg;
 	void Awake () {
 //		_sample2();
 	}
 	// Use this for initialization
 	void Start () {}
-	
-	// Update is called once per frame
-	void Update () {}
+/**
+* 画面更新
+*/
+	void Update () {
+		if(angle * Mathf.Rad2Deg < 0) {
+			return;
+		}
+		_moveCamera();
+	}
+/**
+* カメラ回転
+*/
+	private void _moveCamera() {
+		float radius = 125;
+		GameObject target = (GameObject)GameObject.Find("board");
+		Camera maincamera = gameObject.GetComponent<Camera>();
+          Vector3 pos = target.transform.position;
+          maincamera.transform.LookAt(pos);     // カメラをtargetの方向へ向かせるように設定する
+
+          // オブジェクトの周りをカメラが円運動する
+          maincamera.transform.position = new Vector3(
+               pos.x/* + radius*/,
+               pos.y + Mathf.Cos(angle) * radius,
+               pos.z + Mathf.Sin(angle) * radius
+          );
+          Debug.Log(
+          	"angle:"+Mathf.Rad2Deg * angle+
+          	" y:"+(pos.y + Mathf.Cos(angle) * radius)+
+          	" z:"+(pos.z + Mathf.Sin(angle) * radius)
+          );
+//          angle += 0.01f;
+          angle -= 0.01f;
+	}
 /**
 * サンプル
 *
