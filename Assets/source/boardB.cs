@@ -46,8 +46,7 @@ public class boardB : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay(clickDeltaPosition);
 				RaycastHit hit;
 				if(Physics.Raycast(ray, out hit)) {
-				
-					if(hit.collider.gameObject.name != "board(Clone)" ) {
+					if(hit.collider.gameObject.name != "board" ) {
 						Debug.Log("not board:"+hit.collider.gameObject.name);
 						return;
 					}
